@@ -14,11 +14,17 @@ function setupNavigation() {
 function loadCalculator(type) {
   const container = document.getElementById("app-content");
 
+  if (type === "average") {
+    renderAverageCalculator(container);
+    return;
+  }
+
   container.innerHTML = `
-    <h2>${formatTitle(type)} Calculator</h2>
-    <p>This calculator module will be loaded here.</p>
+    <h2>${type.toUpperCase()} Calculator</h2>
+    <p>This calculator will be implemented next.</p>
   `;
 }
+
 
 function formatTitle(text) {
   return text.toUpperCase();
